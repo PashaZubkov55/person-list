@@ -1,26 +1,51 @@
-import React from "react";
+import React, { useEffect, } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPersons } from "../../store/Person/personSlice";
+import Fields from "../fields/fields";
+
+// https://fakerapi.it/api/v1/persons - пользователи 
 
 const Table = ()=>{
-    return(
-        <div className="table">
-            <div className="table__wrapper">
-                <div className="table__header">
-                    <div className="table__item ">Имя</div>
-                    <div className="table__item">Фамилия</div>
-                    <div className="table__item">Год рождения</div>
-                    <div className="table__item">Телефон</div>
-                </div>
-                <div className="table__persons">
-                    <div className="table__person person">
-                        <div className="person__field ">Василий</div>
-                        <div className="person__field">Петров</div>
-                        <div className="person__field">1996</div>
-                        <div className="person__field">9 922 - 364- 84-32</div>
-                    </div>
 
-                </div>
-            </div>
+    const dispatch = useDispatch()
+    const persons = useSelector((state)=>state.persons.list)
+
+    useEffect(()=>{
+        if (persons !== []) {
+          dispatch(getPersons())
+          console.log(persons)
+        
+        }
+     
+    } ,[persons])
+    return(
+      
+
+      <div className="table">
+        <div className="table__wrapper">
+          <div className="table__header ">
+            <div className="table__field">Имя</div>
+            <div className="table__field">Фамилия</div>
+            <div className="table__field">Email</div>
+            <div className="table__field">Телефон</div>
+          </div>
         </div>
+        <Fields persons= {persons}/>
+        
+      </div>
     )
+    
+       
+                    
+                    
+
+                   
+                      
+                    
+
+              
+       
+    
+    
 }
 export default Table

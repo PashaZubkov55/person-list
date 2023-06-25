@@ -10,26 +10,30 @@
 
 .table__header{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  text-align: left;
-  flex-basis: 30%;
-  font-size: 20px;
-
-}
-.table__person{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  
-}
-
-.table__persons{
   text-align: center;
+  font-size: 30px;
+  flex-basis: auto;
 }
-.person__field{
-  text-align: left;
-  flex-basis: 10%;
-  white-space: nowrap;
+.table__field{
+ 
+
+}
+
+.table__row{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-basis: auto;
+  border-bottom:2px solid #000 ;
+  padding-bottom: 15px;
+ 
+}
+.table__item{
   font-size: 20px;
+  margin-top: 15px;
+ 
+
 }

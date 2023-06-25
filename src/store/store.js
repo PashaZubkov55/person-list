@@ -3,7 +3,7 @@ import PersonSlice from "./Person/personSlice";
 
 export const store = configureStore({
     reducer:{
-        person: PersonSlice
+        persons: PersonSlice
 
     }
 
