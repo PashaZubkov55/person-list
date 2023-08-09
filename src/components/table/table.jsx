@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPersons } from "../../store/Person/personSlice";
 import Fields from "../fields/fields";
 
+
+
 // https://fakerapi.it/api/v1/persons - пользователи 
 
 const Table = ()=>{
@@ -20,7 +22,7 @@ const Table = ()=>{
     } ,[persons])
     return(
       
-
+      <div className="container">
       <div className="table">
         <div className="table__wrapper">
           <div className="table__header ">
@@ -31,8 +33,9 @@ const Table = ()=>{
           </div>
         </div>
         <Fields persons= {persons}/>
-        
-      </div>
+        </div>
+        </div>
+       
     )
     
        
