@@ -21,8 +21,14 @@ const personSlice = createSlice({
     name: 'persons',
     initialState:{
         list:[],
-        loading: false
+        loading: false,
+        modal:true
 
+    },
+    reducers:{
+        detalModal:(state, {payload})=>{
+            state.modal = payload
+        }
     },
     extraReducers: (builder)=>{
         builder.addCase(getPersons.pending, (state)=>{
@@ -35,9 +41,11 @@ const personSlice = createSlice({
         builder.addCase(getPersons.rejected, (state)=>{
             state.loading = false
         })
-    },
-    
+    }
 })
 
+    
+    
 
-export default personSlice.reducer
+export const {detalModal}  = personSlice.actions
+ export default personSlice.reducer
