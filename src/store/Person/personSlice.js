@@ -22,13 +22,19 @@ const personSlice = createSlice({
     initialState:{
         list:[],
         loading: false,
-        modal:true
+        modal:false,
+        person: {}
 
     },
     reducers:{
+      
         detalModal:(state, {payload})=>{
             state.modal = payload
-        }
+        },
+        getPerson: (state, {payload})=>{
+            state.person = payload
+            state.modal= true
+        },
     },
     extraReducers: (builder)=>{
         builder.addCase(getPersons.pending, (state)=>{
@@ -47,5 +53,5 @@ const personSlice = createSlice({
     
     
 
-export const {detalModal}  = personSlice.actions
+export const {detalModal, getPerson}  = personSlice.actions
  export default personSlice.reducer
