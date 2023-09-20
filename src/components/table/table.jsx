@@ -2,6 +2,7 @@ import React, { useEffect, } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersons } from "../../store/Person/personSlice";
 import Fields from "../fields/fields";
+import { Search } from "../search/search";
 
 
 
@@ -21,8 +22,10 @@ const Table = ()=>{
      
     } ,[persons])
     return(
+
       
       <div className="container">
+        <Search/>
       <div className="table">
         <div className="table__wrapper">
           <div className="table__header ">

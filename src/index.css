@@ -84,4 +84,41 @@
 
 }
 
+/*search*/
 
+.search{
+
+}
+.search__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+}
+.search__fild{
+
+}
+.searchField{
+  width: 400px;
+  height: 40px;
+ padding: 0 10px;
+ font-size: 20px;
+
+}
+.search__button{
+
+}
+.searchButton{
+  height: 40px;
+  margin-left: 10px;
+  color: #fff;
+  background-color: #4682B4;
+  font-size: 15px;
+  padding: 0 10px;
+  border: 2px solid silver;
+   
+}
+.searchButton:hover{
+  cursor: pointer;
+}
