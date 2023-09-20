@@ -25,7 +25,7 @@ const Table = ()=>{
 
       
       <div className="container">
-        <Search/>
+        <Search persons={persons}/>
       <div className="table">
         <div className="table__wrapper">
           <div className="table__header ">
