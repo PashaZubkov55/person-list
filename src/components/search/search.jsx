@@ -1,17 +1,40 @@
 import React from 'react'
 import { useState } from 'react'
-import { useEffect } from 'react'
-export  const Search = ({data})=>{
+import { useDispatch, useSelector } from 'react-redux';
+import { changePersons, getPersons } from '../../store/Person/personSlice';
+export  const Search = ()=>{
     const [field, setField]  = useState('')
-  useEffect(()=>{
-    console.log(data)
-  },[data])
+    const persons = useSelector((state)=>state.persons.list)
+    const Dispatch = useDispatch()
   const getField = (event)=>{
         setField(event.target.value)
   }
+  
    const submit=(event)=>{
+    let filtreds = []
     event.preventDefault()
+    if (field === '') {
+        debugger
+       Dispatch(getPersons)
+    } else{
+            
+        persons.filter((item)=>{
+           if (item.firstname.toLowerCase().includes(field.toLowerCase())) {
+                //Dispatch(changePersons(item))
+                filtreds.push(item)
+                Dispatch(changePersons(filtreds))
+                
+           }
+
+           
+        })
+      
+       
+    }
+
+    
    }
+   
     return(
         <form className="search" onSubmit={submit}>
             <div className="search__wrapper">

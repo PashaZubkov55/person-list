@@ -1,9 +1,12 @@
 import  React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getPerson } from "../../store/Person/personSlice";
 
 
-const Fields = ({persons})=>{
+
+
+const Fields = ()=>{
+    const persons = useSelector((state)=>state.persons.list)
     const dispatch = useDispatch()
   
     return(

@@ -16,20 +16,20 @@ const Table = ()=>{
     const [data, setData] = useState([])
 
     useEffect(()=>{
-        if (persons !== []) {
+      
           dispatch(getPersons())
           setData(persons)
-          console.log(data)
+          //console.log(data)
          
         
-        }
+        
      
-    } ,[persons])
+    } ,[])
     return(
 
       
       <div className="container">
-        <Search persons={data}/>
+        <Search />
       <div className="table">
         <div className="table__wrapper">
           <div className="table__header ">
@@ -39,7 +39,7 @@ const Table = ()=>{
             <div className="table__field">Телефон</div>
           </div>
         </div>
-        <Fields persons= {data}/>
+        <Fields />
         </div>
         </div>
        

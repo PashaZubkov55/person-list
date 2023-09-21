@@ -28,6 +28,9 @@
   padding-bottom: 15px;
  
 }
+.table__row:hover{
+  cursor:pointer;
+}
 .table__item{
   font-size: 20px;
   margin-top: 15px;
