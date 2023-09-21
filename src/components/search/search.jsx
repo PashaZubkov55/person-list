@@ -15,7 +15,7 @@ export  const Search = ()=>{
     event.preventDefault()
     if (field === '') {
         debugger
-       Dispatch(getPersons)
+        window.location.reload()
     } else{
             
         persons.filter((item)=>{
