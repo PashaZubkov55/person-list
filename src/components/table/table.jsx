@@ -33,10 +33,10 @@ const Table = ()=>{
       <div className="table">
         <div className="table__wrapper">
           <div className="table__header ">
-            <div className="table__field">Имя</div>
-            <div className="table__field">Фамилия</div>
-            <div className="table__field">Email</div>
-            <div className="table__field">Телефон</div>
+            <div className="table__field">Имя <img src="https://icon-library.com/images/img_274238_155.png" alt="icon" className="table__icon" /></div>
+            <div className="table__field">Фамилия  <img src="https://icon-library.com/images/img_274238_155.png" alt="icon" className="table__icon" /></div>
+            <div className="table__field">Email  <img src="https://icon-library.com/images/img_274238_155.png" alt="icon" className="table__icon" /></div>
+            <div className="table__field">Телефон  <img src="https://icon-library.com/images/img_274238_155.png" alt="icon" className="table__icon" /></div>
           </div>
         </div>
         <Fields />

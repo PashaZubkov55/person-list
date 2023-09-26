@@ -31,6 +31,9 @@
 .table__row:hover{
   cursor:pointer;
 }
+.table__field:hover{
+  cursor: pointer;
+}
 .table__item{
   font-size: 20px;
   margin-top: 15px;
@@ -55,8 +58,11 @@
   box-shadow: 0 10px  15px rgba(0,0,0, .4);
   z-index: 2;
   background-color: #fff; 
- 
 
+}
+.table__icon{
+  width: 30px;
+  height: 30px;
 } 
 
 .modal{
