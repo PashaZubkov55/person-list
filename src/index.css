@@ -132,3 +132,33 @@
 .searchButton:hover{
   cursor: pointer;
 }
+
+
+/*pagination*/
+
+.pagination{}
+.pagination__items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+
+}
+.pagination__item{
+  list-style: none;
+  text-align: center;
+  padding:  10px;
+  border: 2px solid #000;
+  margin-left: 10px;
+  font-size: 20px;
+  
+}
+.pagination__item:hover{
+  cursor: pointer;
+}
+.pagination__link{
+  text-decoration: none;
+  color: #000;
+
+
+}

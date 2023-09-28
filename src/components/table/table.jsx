@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersons, changePersons } from "../../store/Person/personSlice";
 import Fields from "../fields/fields";
+import { Pagination } from "../pagination/pagination";
 import { Search } from "../search/search";
 
 
@@ -66,6 +67,7 @@ const Table = ()=>{
           </div>
         </div>
         <Fields />
+        <Pagination/>
         </div>
         </div>
        

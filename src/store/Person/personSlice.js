@@ -23,11 +23,27 @@ const personSlice = createSlice({
         list:[],
         loading: false,
         modal:false,
-        person: {}
+        person: {},
+        limitPage: 10,
+       
+        countPage: []
+
 
     },
     reducers:{
-      
+      getLimitPage:(state)=>{
+        let  limitData = state.list.length / state.limitPage
+       
+            for (let i = 1; i <= limitData; i++) {
+               if (state.countPage.length>=3) {
+                return 
+               }
+               state.countPage.push(i)
+                 
+             }
+        
+        
+      },
         detalModal:(state, {payload})=>{
             state.modal = payload
         },
@@ -38,6 +54,8 @@ const personSlice = createSlice({
         changePersons:(state, {payload})=>{
             state.list = [...payload]
         }
+
+
     },
     extraReducers: (builder)=>{
         builder.addCase(getPersons.pending, (state)=>{
@@ -56,5 +74,5 @@ const personSlice = createSlice({
     
     
 
-export const {detalModal, getPerson, changePersons}  = personSlice.actions
+export const {detalModal, getPerson, changePersons, getLimitPage}  = personSlice.actions
  export default personSlice.reducer
