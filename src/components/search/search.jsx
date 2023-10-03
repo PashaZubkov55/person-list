@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { changePersons, getPersons } from '../../store/Person/personSlice';
 export  const Search = ()=>{
@@ -9,16 +10,15 @@ export  const Search = ()=>{
   const getField = (event)=>{
         setField(event.target.value)
   }
-  
    const submit=(event)=>{
-    let filtreds = []
+    let filtreds =[]
     event.preventDefault()
     if (field === '') {
-        debugger
         window.location.reload()
     } else{
-            
-        persons.filter((item)=>{
+       let array = localStorage.getItem('list')
+        let parseArray = JSON.parse(array)
+        parseArray.filter((item)=>{
            if (item.firstname.toLowerCase().includes(field.toLowerCase())) {
                 //Dispatch(changePersons(item))
                 filtreds.push(item)

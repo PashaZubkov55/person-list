@@ -35,7 +35,7 @@ const personSlice = createSlice({
         let  limitData = state.list.length / state.limitPage
        
             for (let i = 1; i <= limitData; i++) {
-               if (state.countPage.length>=3) {
+               if (state.countPage.length>=limitData) {
                 return 
                }
                state.countPage.push(i)

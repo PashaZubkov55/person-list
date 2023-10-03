@@ -22,7 +22,10 @@ const Table = ()=>{
           dispatch(getPersons())
         
           setData(persons)
-          console.log(persons)
+          if (  localStorage.getItem('list') === '[]') {
+            localStorage.setItem('list', JSON.stringify(persons))
+            console.log(persons)
+          }
          
         
         

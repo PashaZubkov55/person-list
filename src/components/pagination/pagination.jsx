@@ -24,7 +24,7 @@ export const Pagination = ()=>{
                 <ul className="pagination__items">
                     {countPage.map((page)=>{
                         return(
-                                <li className="pagination__item">
+                                <li className="pagination__item" key={page}>
                             <a href="#"  className="pagination__link">{page}</a>
                         </li> 
                     )
