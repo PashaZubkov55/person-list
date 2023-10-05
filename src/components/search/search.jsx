@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 import { useDispatch, useSelector } from 'react-redux';
-import { changePersons, getPersons } from '../../store/Person/personSlice';
+import { changePersons, getPersons, paginationPages } from '../../store/Person/personSlice';
 export  const Search = ()=>{
     const [field, setField]  = useState('')
     const persons = useSelector((state)=>state.persons.list)
@@ -14,7 +14,7 @@ export  const Search = ()=>{
     let filtreds =[]
     event.preventDefault()
     if (field === '') {
-        window.location.reload()
+        Dispatch(paginationPages(1))
     } else{
        let array = localStorage.getItem('list')
         let parseArray = JSON.parse(array)

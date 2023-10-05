@@ -25,7 +25,9 @@ const personSlice = createSlice({
         modal:false,
         person: {},
         limitPage: 10,
-       
+        countNamberPage: 1,
+        lastRow: 10,
+        firstRow: 2,
         countPage: []
 
 
@@ -41,9 +43,42 @@ const personSlice = createSlice({
                state.countPage.push(i)
                  
              }
-        
-        
       },
+    
+
+      paginationPages: (state,{payload})=>{
+        console.log(payload)
+        const array = localStorage.getItem('list')
+        const list = JSON.parse(array)
+        const  first = payload * state.limitPage 
+        const last  =  first - state.limitPage
+        const paginatorList  = list.slice(last,first)
+        console.log(paginatorList)
+        state.list = [...paginatorList]
+
+
+
+
+
+      },
+      changePersons:(state, {payload})=>{
+        state.list = [...payload]
+    },
+    setLastRow: (state, {payload})=>{
+        state.lastRow = payload
+    },
+    setfirstRow: (state, {payload})=>{
+        state.firstRow = payload
+    },
+    setCountNamberPage: (state, {payload})=>{
+        state.countNamberPage = payload
+    },
+    setlimitPage: (state, {payload})=>{
+        state.limitPage = payload
+    },
+
+
+
         detalModal:(state, {payload})=>{
             state.modal = payload
         },
@@ -51,9 +86,7 @@ const personSlice = createSlice({
             state.person = payload
             state.modal= true
         },
-        changePersons:(state, {payload})=>{
-            state.list = [...payload]
-        }
+       
 
 
     },
@@ -74,5 +107,5 @@ const personSlice = createSlice({
     
     
 
-export const {detalModal, getPerson, changePersons, getLimitPage}  = personSlice.actions
+export const {detalModal, getPerson, changePersons, getLimitPage, paginationPages, setCountNamberPage, setLastRow, setfirstRow , setlimitPage}  = personSlice.actions
  export default personSlice.reducer

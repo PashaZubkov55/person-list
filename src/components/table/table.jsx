@@ -14,18 +14,29 @@ const Table = ()=>{
 
     const dispatch = useDispatch()
     const persons = useSelector((state)=>state.persons.list)
-
-    const [data, setData] = useState([])
+    const limitPage = useSelector((state)=>state.persons.limitPage)
 
     useEffect(()=>{
-      
-          dispatch(getPersons())
-        
-          setData(persons)
-          if (  localStorage.getItem('list') === '[]') {
-            localStorage.setItem('list', JSON.stringify(persons))
-            console.log(persons)
-          }
+      dispatch(getPersons())
+    
+  
+      if (!localStorage.getItem('list') || localStorage.getItem('list') == '[]' ) {
+        dispatch(getPersons())
+        localStorage.setItem('list', JSON.stringify(persons))
+      }
+     
+      /*
+          
+         
+          console.log(persons)
+         
+          dispatch(changePersons(array))
+          console.log(persons)
+          */
+         
+         
+          
+         
          
         
         
