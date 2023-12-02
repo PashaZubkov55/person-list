@@ -19,7 +19,7 @@ import { detalModal } from "../../store/Person/personSlice";
                     <img src="https://vuzopedia.ru/storage/app/media/male.jpg" alt="avatar" className="modalImage" /></div>
                 </div>
                 <div className="modal__text">
-                   <div className="modal__item"><strong>Имя: </strong>{person.firstname}</div>
+                   <div className="modal__item"><strong>Имя: </strong>{person.firstname}.</div>
                    <div className="modal__item"><strong>Фамилия: </strong>{person.lastname}</div>
                    <div className="modal__item"><strong>Email: </strong>{person.email}</div>
                    <div className="modal__item"><strong>Телефон: </strong>{person.phone}</div>
