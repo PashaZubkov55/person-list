@@ -5,9 +5,10 @@ import Table from "./components/table/table";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <Table/>
       <Modal/>
+
     </div>
   );
 }
